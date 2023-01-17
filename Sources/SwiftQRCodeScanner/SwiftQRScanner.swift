@@ -336,7 +336,7 @@ public class QRCodeScannerController: UIViewController,
                             delegate?.qrScannerDidFail(self, error: .emptyResult)
                         }
                         captureSession.stopRunning()
-                        self.dismiss(animated: true, completion: nil)
+//                        self.dismiss(animated: true, completion: nil)
                     }
                 }
             }
@@ -358,7 +358,7 @@ extension QRCodeScannerController: ImagePickerDelegate {
                 return
             }
             self.delegate?.qrScanner(self, scanDidComplete: qrCodeData)
-            self.dismiss(animated: true)
+//            self.dismiss(animated: true)
         } else {
             showInvalidQRCodeAlert()
         }
