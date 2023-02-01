@@ -14,8 +14,8 @@ import Foundation
  */
 public protocol QRScannerCodeDelegate: AnyObject {
     
-    func qrScanner(_ controller: UIViewController, scanDidComplete result: String)
-    func qrScannerDidFail(_ controller: UIViewController,  error: QRCodeError)
-    func qrScannerDidCancel(_ controller: UIViewController)
+    func qrScanner(_ controller: QRCodeScannerController, scanDidComplete result: String)
+    func qrScannerDidFail(_ controller: QRCodeScannerController,  error: QRCodeError)
+    func qrScannerDidCancel(_ controller: QRCodeScannerController)
 }
 #endif

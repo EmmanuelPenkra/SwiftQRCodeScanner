@@ -81,7 +81,7 @@ public class QRCodeScannerController: UIViewController,
     }()
     
     private let dataOutput = AVCaptureMetadataOutput()
-    private let captureSession = AVCaptureSession()
+    let captureSession = AVCaptureSession()
     
     //Initialise videoPreviewLayer with capture session
     private lazy var videoPreviewLayer: AVCaptureVideoPreviewLayer = {
@@ -335,7 +335,7 @@ public class QRCodeScannerController: UIViewController,
                         } else {
                             delegate?.qrScannerDidFail(self, error: .emptyResult)
                         }
-                        captureSession.stopRunning()
+//                        captureSession.stopRunning()
 //                        self.dismiss(animated: true, completion: nil)
                     }
                 }
