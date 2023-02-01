@@ -81,7 +81,7 @@ public class QRCodeScannerController: UIViewController,
     }()
     
     private let dataOutput = AVCaptureMetadataOutput()
-    let captureSession = AVCaptureSession()
+    private let captureSession = AVCaptureSession()
     
     //Initialise videoPreviewLayer with capture session
     private lazy var videoPreviewLayer: AVCaptureVideoPreviewLayer = {
@@ -273,9 +273,14 @@ public class QRCodeScannerController: UIViewController,
     
     //MARK: - Setup and start capturing session
     
-    private func startScanningQRCode() {
+    public func startScanningQRCode() {
         if captureSession.isRunning { return }
         captureSession.startRunning()
+    }
+    
+    public func stopScanningQRCode() {
+        if !captureSession.isRunning { return }
+        captureSession.stopRunning()
     }
     
     private func setupCaptureSession(_ devicePostion: AVCaptureDevice.Position) {
